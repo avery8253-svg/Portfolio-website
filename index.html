@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ANTIFORM studios</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <nav class="top-nav">
+    <div class="site-container">
+      <ul>
+        <li><a href="index.html" class="nav-link active">home</a></li>
+        <li class="nav-separator">|</li>
+        <li><a href="about.html" class="nav-link">about me</a></li>
+        <li class="nav-separator">|</li>
+        <li><a href="legal.html" class="nav-link">legal</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero site-container">
+    <img src="assets/Antiform_LARGE_NEW.png" alt="Anti Form Studios" class="hero-logo">
+  </header>
+
+  <main>
+    <section class="featured-section site-container">
+      <!-- Filter and edit mode UI will be injected here by JavaScript -->
+      <h2 class="section-heading">featured artwork</h2>
+      
+      <div class="modular-grid">
+
+        <div class="artwork-item" data-project="ghaul-cd">
+          <img src="assets/Ghaul CD/main.png" alt="Ghaul CD">
+        </div>
+
+        <div class="artwork-item" data-project="elite-patches">
+          <img src="assets/Elite patches/main.png" alt="Elite Patches">
+        </div>
+
+        <div class="artwork-item" data-project="playlist">
+          <img src="assets/Playlist/main.png" alt="Playlist">
+        </div>
+
+        <div class="artwork-item" data-project="7a7p-poster">
+          <img src="assets/7a7pRIPposter.png" alt="7a7p RIP Poster">
+        </div>
+
+        <div class="artwork-item" data-project="fighting-time">
+          <img src="assets/Fighting time.png" alt="Fighting Time">
+        </div>
+
+        <div class="artwork-item" data-project="headcheck-3">
+          <img src="assets/Headcheck 3/main.png" alt="Headcheck 3">
+        </div>
+
+        <div class="artwork-item" data-project="headcheck-4">
+          <img src="assets/Headcheck 4/main.png" alt="Headcheck 4">
+        </div>
+
+        <div class="artwork-item" data-project="3rd-world-poster">
+          <img src="assets/3rd world poster/main.png" alt="3rd World Poster">
+        </div>
+
+        <div class="artwork-item" data-project="elite-coin">
+          <img src="assets/Elite Coin/main.png" alt="Elite Coin">
+        </div>
+
+        <div class="artwork-item" data-project="ghaul-floppy">
+          <img src="assets/ghaul floppy.png" alt="Ghaul Floppy">
+        </div>
+
+        <div class="artwork-item" data-project="poster1">
+          <img src="assets/poster1.png" alt="Poster">
+        </div>
+
+        <div class="artwork-item" data-project="geeked">
+          <img src="assets/geeked.png" alt="Geeked">
+        </div>
+
+        <div class="artwork-item" data-project="subway">
+          <img src="assets/Subway.png" alt="Subway">
+        </div>
+
+        <div class="artwork-item" data-project="crushed">
+          <img src="assets/CRUSHED.png" alt="CRUSHED">
+        </div>
+
+        <div class="artwork-item" data-project="bullys-dose">
+          <img src="assets/Feb 9 2025 Bullys Dose ghaul por stunlock.png" alt="Bullys Dose">
+        </div>
+
+        <div class="artwork-item" data-project="nbk-crest">
+          <img src="assets/Nbk crestbb 1.png" alt="NBK Crest">
+        </div>
+
+        <div class="artwork-item" data-project="ghaul-dsi-tour">
+          <img src="assets/Ghaul dsi tour/main.png" alt="Ghaul DSI Tour">
+        </div>
+
+        <div class="artwork-item" data-project="ice-castle">
+          <img src="assets/Ice_castle_1.png" alt="Ice Castle">
+        </div>
+
+        <div class="artwork-item" data-project="jason">
+          <img src="assets/Jason2.png" alt="Jason">
+        </div>
+
+        <div class="artwork-item" data-project="evil-street">
+          <img src="assets/Evil Street/main.png" alt="Evil Street">
+        </div>
+
+        <div class="artwork-item" data-project="urbling">
+          <img src="assets/urbling1.png" alt="Urbling">
+        </div>
+
+        <div class="artwork-item" data-project="5xl-logo">
+          <img src="assets/5xl logo.png" alt="5XL Logo">
+        </div>
+
+        <div class="artwork-item" data-project="y1">
+          <img src="assets/Y1.png" alt="Y1">
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Artwork viewer" hidden>
+    <button class="lightbox-close" aria-label="Close">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
+        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
+
+    <button class="lightbox-prev" id="lightbox-prev" aria-label="Previous image">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"/>
+      </svg>
+    </button>
+
+    <button class="lightbox-next" id="lightbox-next" aria-label="Next image">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="9 18 15 12 9 6"/>
+      </svg>
+    </button>
+    <div class="lightbox-content">
+      <div class="lightbox-image-wrap">
+        <img class="lightbox-image" id="lightbox-image" src="" alt="">
+        <p class="lightbox-image-label" id="lightbox-image-label"></p>
+      </div>
+      <div class="lightbox-info" id="lightbox-info">
+        <h3 class="lightbox-title" id="lightbox-title"></h3>
+        <p class="lightbox-subtitle" id="lightbox-subtitle"></p>
+        <p class="lightbox-description" id="lightbox-description"></p>
+        <div class="lightbox-gallery" id="lightbox-gallery"></div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="site-container">
+      <div class="footer-inner">
+        <div class="footer-left">
+          <span class="footer-brand">ANTIFORM studios</span>
+          <span class="footer-tagline">graphic design &amp; visual identity — available for commission</span>
+        </div>
+        <ul class="footer-links">
+          <li><a href="index.html">home</a></li>
+          <li><a href="about.html">about</a></li>
+          <li><a href="legal.html">legal</a></li>
+        </ul>
+        <span class="footer-copy">&copy; <script>document.write(new Date().getFullYear())</script> ANTIFORM studios</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

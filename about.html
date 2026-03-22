@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>about me | ANTIFORM studios</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .about-page {
+      padding-top: 3.5rem;
+      padding-bottom: 4rem;
+    }
+
+    .about-inner {
+      max-width: 806px; /* 645 * 1.25 */
+      margin: 0 auto;
+    }
+
+    .about-title {
+      font-size: 2.52rem;
+      font-weight: 900;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-bio {
+      font-weight: 300;
+      color: #444444;
+      line-height: 1.4;
+      font-size: 1.09rem;
+    }
+
+    .about-bio p + p {
+      margin-top: 1rem;
+    }
+
+    .about-rule {
+      border: none;
+      border-top: 1px solid #dddee0;
+      margin: 2.25rem 0;
+    }
+
+    .about-label {
+      font-weight: 900;
+      font-variant: small-caps;
+      letter-spacing: 0.1em;
+      font-size: 0.97rem;
+      text-transform: lowercase;
+      color: #6a6a6a;
+      position: relative;
+      display: inline-block;
+      padding-left: 0.9rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .about-label::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 3px;
+      height: 100%;
+      background-color: #d93030;
+    }
+
+    .about-body {
+      font-weight: 300;
+      color: #555555;
+      font-size: 1.06rem;
+      line-height: 1.8;
+    }
+
+    .about-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      margin-top: 0.75rem;
+    }
+
+    .about-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #000000;
+      text-decoration: none;
+      font-weight: 900;
+      font-size: 1.01rem;
+      font-variant: small-caps;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid transparent;
+      transition: color 0.2s ease, border-color 0.2s ease;
+      width: fit-content;
+    }
+
+    .about-link:hover {
+      color: #d93030;
+      border-bottom-color: #d93030;
+    }
+
+    .about-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      margin-top: 1.5rem;
+      font-size: 0.86rem;
+      font-weight: 300;
+      color: #999;
+      letter-spacing: 0.05em;
+    }
+
+    .about-status-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: #3aad5e;
+      display: inline-block;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="top-nav">
+    <div class="site-container">
+      <ul>
+        <li><a href="index.html" class="nav-link">home</a></li>
+        <li class="nav-separator">|</li>
+        <li><a href="about.html" class="nav-link active">about me</a></li>
+        <li class="nav-separator">|</li>
+        <li><a href="legal.html" class="nav-link">legal</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="about-page site-container">
+    <div class="about-inner">
+
+      <h1 class="about-title">About me</h1>
+
+      <div class="about-bio">
+        <p>I'm a designer shaped by contemporary media and the aesthetics that defined my formative years. What drives me isn't just making something that works — it's creating visuals that feel alive, personal, and worth looking at. I love taking an idea and pushing it, distorting it, refining it until it feels fluid and intentional in the digital space.</p>
+        <p>In a world saturated with safe, corporate design built for mass appeal, I'm more interested in making work that feels visceral and real — something with presence, not just polish.</p>
+      </div>
+
+      <hr class="about-rule">
+
+      <p class="about-label">what i do</p>
+      <p class="about-body">Album artwork, merch graphics, event posters, logo design, CD packaging, and social media assets. If it needs a visual, I can build it.</p>
+
+      <hr class="about-rule">
+
+      <p class="about-label">how i work</p>
+      <p class="about-body">I work closely with clients to understand the feel they're after — then push it further. Most projects start with a mood direction and evolve from there. Comfortable with open briefs, and used to working with artists, labels, and independent creators.</p>
+
+      <hr class="about-rule">
+
+      <p class="about-label">get in touch</p>
+      <p class="about-body">Open to commissions, collaborations, and one-off projects.</p>
+
+      <div class="about-links">
+        <a href="mailto:your@email.com" class="about-link">✉ &nbsp;your@email.com</a>
+        <a href="https://www.instagram.com/yourhandle" target="_blank" rel="noopener" class="about-link">◈ &nbsp;@yourhandle</a>
+      </div>
+
+      <div class="about-status">
+        <span class="about-status-dot"></span>
+        currently available for work
+      </div>
+
+    </div>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>
