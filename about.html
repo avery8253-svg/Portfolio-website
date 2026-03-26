@@ -15,7 +15,7 @@
     }
 
     .about-inner {
-      max-width: 806px; /* 645 * 1.25 */
+      max-width: 806px;
       margin: 0 auto;
     }
 
@@ -75,6 +75,141 @@
       line-height: 1.8;
     }
 
+    /* Tab system */
+    .tab-nav {
+      display: flex;
+      gap: 0;
+      border-bottom: 2px solid #dddee0;
+      margin-bottom: 2rem;
+    }
+
+    .tab-btn {
+      background: none;
+      border: none;
+      padding: 0.6rem 1.2rem 0.65rem;
+      font-family: inherit;
+      font-weight: 900;
+      font-variant: small-caps;
+      letter-spacing: 0.08em;
+      font-size: 0.93rem;
+      text-transform: lowercase;
+      color: #999;
+      cursor: pointer;
+      position: relative;
+      transition: color 0.2s ease;
+    }
+
+    .tab-btn::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background-color: #d93030;
+      transform: scaleX(0);
+      transition: transform 0.2s ease;
+    }
+
+    .tab-btn.active {
+      color: #111;
+    }
+
+    .tab-btn.active::after {
+      transform: scaleX(1);
+    }
+
+    .tab-btn:hover {
+      color: #333;
+    }
+
+    .tab-panel {
+      display: none;
+    }
+
+    .tab-panel.active {
+      display: block;
+    }
+
+    /* Experience / Education entries */
+    .exp-entry {
+      display: grid;
+      grid-template-columns: 1fr 2.5fr;
+      gap: 1.25rem 2rem;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid #ebebeb;
+    }
+
+    .exp-entry:last-child {
+      border-bottom: none;
+    }
+
+    .exp-meta {
+      padding-top: 0.1rem;
+    }
+
+    .exp-year {
+      font-size: 0.82rem;
+      font-weight: 300;
+      color: #aaa;
+      letter-spacing: 0.06em;
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+
+    .exp-type {
+      font-size: 0.75rem;
+      font-weight: 900;
+      font-variant: small-caps;
+      letter-spacing: 0.12em;
+      text-transform: lowercase;
+      color: #d93030;
+    }
+
+    .exp-title {
+      font-weight: 900;
+      font-size: 1.02rem;
+      letter-spacing: 0.01em;
+      color: #111;
+      margin-bottom: 0.2rem;
+      line-height: 1.25;
+    }
+
+    .exp-org {
+      font-weight: 300;
+      font-size: 0.9rem;
+      color: #888;
+      margin-bottom: 0.65rem;
+      letter-spacing: 0.02em;
+    }
+
+    .exp-desc {
+      font-weight: 300;
+      font-size: 0.98rem;
+      color: #555;
+      line-height: 1.75;
+    }
+
+    .exp-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.75rem;
+    }
+
+    .exp-tag {
+      font-size: 0.73rem;
+      font-weight: 900;
+      font-variant: small-caps;
+      letter-spacing: 0.08em;
+      text-transform: lowercase;
+      color: #777;
+      border: 1px solid #ddd;
+      padding: 0.15rem 0.5rem;
+      border-radius: 1px;
+    }
+
+    /* Links */
     .about-links {
       display: flex;
       flex-direction: column;
@@ -121,6 +256,13 @@
       display: inline-block;
       flex-shrink: 0;
     }
+
+    @media (max-width: 600px) {
+      .exp-entry {
+        grid-template-columns: 1fr;
+        gap: 0.4rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -149,32 +291,164 @@
 
       <hr class="about-rule">
 
-      <p class="about-label">what i do</p>
-      <p class="about-body">Album artwork, merch graphics, event posters, logo design, CD packaging, and social media assets. If it needs a visual, I can build it.</p>
-
-      <hr class="about-rule">
-
-      <p class="about-label">how i work</p>
-      <p class="about-body">I work closely with clients to understand the feel they're after — then push it further. Most projects start with a mood direction and evolve from there. Comfortable with open briefs, and used to working with artists, labels, and independent creators.</p>
-
-      <hr class="about-rule">
-
-      <p class="about-label">get in touch</p>
-      <p class="about-body">Open to commissions, collaborations, and one-off projects.</p>
-
-      <div class="about-links">
-        <a href="mailto:your@email.com" class="about-link">✉ &nbsp;your@email.com</a>
-        <a href="https://www.instagram.com/yourhandle" target="_blank" rel="noopener" class="about-link">◈ &nbsp;@yourhandle</a>
+      <!-- Tab navigation -->
+      <div class="tab-nav">
+        <button class="tab-btn active" data-tab="overview">overview</button>
+        <button class="tab-btn" data-tab="experience">experience</button>
+        <button class="tab-btn" data-tab="contact">contact</button>
       </div>
 
-      <div class="about-status">
-        <span class="about-status-dot"></span>
-        currently available for work
+      <!-- Overview tab -->
+      <div class="tab-panel active" id="tab-overview">
+
+        <p class="about-label">what i do</p>
+        <p class="about-body">Album artwork, merch graphics, event posters, logo design, CD packaging, and social media assets. If it needs a visual, I can build it.</p>
+
+        <hr class="about-rule">
+
+        <p class="about-label">how i work</p>
+        <p class="about-body">I work closely with clients to understand the feel they're after — then push it further. Most projects start with a mood direction and evolve from there. Comfortable with open briefs, and used to working with artists, labels, and independent creators.</p>
+
+      </div>
+
+      <!-- Experience & Education tab -->
+      <div class="tab-panel" id="tab-experience">
+
+        <p class="about-label">education</p>
+
+        <div class="exp-entry">
+          <div class="exp-meta">
+            <span class="exp-year">2022 — present</span>
+            <span class="exp-type">education</span>
+          </div>
+          <div class="exp-content">
+            <p class="exp-title">Graphic Design</p>
+            <p class="exp-org">British Columbia Institute of Technology (BCIT) — Vancouver, BC</p>
+            <p class="exp-desc">Studying visual communication, typography, layout, and brand identity within a technically rigorous program. Developed a strong foundation in both print and digital production workflows, with a focus on applying design thinking to real-world creative problems.</p>
+            <div class="exp-tags">
+              <span class="exp-tag">typography</span>
+              <span class="exp-tag">brand identity</span>
+              <span class="exp-tag">print production</span>
+              <span class="exp-tag">digital design</span>
+              <span class="exp-tag">layout</span>
+            </div>
+          </div>
+        </div>
+
+        <hr class="about-rule">
+
+        <p class="about-label">experience</p>
+
+        <div class="exp-entry">
+          <div class="exp-meta">
+            <span class="exp-year">ongoing</span>
+            <span class="exp-type">freelance</span>
+          </div>
+          <div class="exp-content">
+            <p class="exp-title">Album Artwork & Music Packaging</p>
+            <p class="exp-org">Independent Artists & Labels</p>
+            <p class="exp-desc">Designed full visual packages for independent releases — from cover artwork and CD packaging to insert layouts and digital single assets. Work spans multiple genres, with an emphasis on identity-driven design that reflects the artist's sound and world.</p>
+            <div class="exp-tags">
+              <span class="exp-tag">album art</span>
+              <span class="exp-tag">CD packaging</span>
+              <span class="exp-tag">artist identity</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-entry">
+          <div class="exp-meta">
+            <span class="exp-year">ongoing</span>
+            <span class="exp-type">freelance</span>
+          </div>
+          <div class="exp-content">
+            <p class="exp-title">Event Posters & Merch Graphics</p>
+            <p class="exp-org">Artists, Promoters & Independent Creators</p>
+            <p class="exp-desc">Created print-ready and digital poster designs for shows, releases, and events. Alongside that, designed merch graphics, tees, and hoodies — where the visual needs to hold up at scale, in print, and as a statement piece on its own.</p>
+            <div class="exp-tags">
+              <span class="exp-tag">poster design</span>
+              <span class="exp-tag">print-ready</span>
+              <span class="exp-tag">merch graphics</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-entry">
+          <div class="exp-meta">
+            <span class="exp-year">ongoing</span>
+            <span class="exp-type">freelance</span>
+          </div>
+          <div class="exp-content">
+            <p class="exp-title">Social Media Graphics & Digital Assets</p>
+            <p class="exp-org">Artists, Brands & Independent Clients</p>
+            <p class="exp-desc">Developed cohesive social media visual systems — posts, stories, banners, and promotional assets — built to maintain a consistent identity across platforms. Worked with artists and small brands to establish a repeatable visual language that feels designed, not templated.</p>
+            <div class="exp-tags">
+              <span class="exp-tag">social media</span>
+              <span class="exp-tag">digital assets</span>
+              <span class="exp-tag">brand consistency</span>
+              <span class="exp-tag">content design</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-entry">
+          <div class="exp-meta">
+            <span class="exp-year">ongoing</span>
+            <span class="exp-type">commission</span>
+          </div>
+          <div class="exp-content">
+            <p class="exp-title">Commission & Professional Client Work</p>
+            <p class="exp-org">Private Clients & Collaborators</p>
+            <p class="exp-desc">Handled end-to-end commission work for private clients — from initial brief and concept development through to final delivery. Experienced in managing client relationships professionally: setting expectations, presenting concepts, incorporating feedback, and delivering production-ready files on time.</p>
+            <div class="exp-tags">
+              <span class="exp-tag">client relations</span>
+              <span class="exp-tag">concept development</span>
+              <span class="exp-tag">file delivery</span>
+              <span class="exp-tag">commissions</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Contact tab -->
+      <div class="tab-panel" id="tab-contact">
+
+        <p class="about-label">get in touch</p>
+        <p class="about-body">Open to commissions, collaborations, and one-off projects.</p>
+
+        <div class="about-links">
+          <a href="mailto:Antiform@gmail.com" class="about-link">✉ &nbsp;antiform@gmail.com</a>
+          <a href="https://www.instagram.com/Schizographix" target="_blank" rel="noopener" class="about-link">◈ &nbsp;@schizographix</a>
+        </div>
+
+        <div class="about-status">
+          <span class="about-status-dot"></span>
+          currently available for work
+        </div>
+
       </div>
 
     </div>
   </main>
 
   <script src="main.js"></script>
+  <script>
+    // Tab switching
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabPanels = document.querySelectorAll('.tab-panel');
+
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.dataset.tab;
+
+        tabBtns.forEach(b => b.classList.remove('active'));
+        tabPanels.forEach(p => p.classList.remove('active'));
+
+        btn.classList.add('active');
+        document.getElementById('tab-' + target).classList.add('active');
+      });
+    });
+  </script>
 </body>
 </html>
